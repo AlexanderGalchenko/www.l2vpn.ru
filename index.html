@@ -250,76 +250,61 @@
 
   <!-- CONTACT / FORM -->
   <section id="contact" class="relative border-t border-slate-800/60">
-<form id="leadForm" class="mt-8 loft-card rounded-2xl p-6 grid gap-5" novalidate>
-  <div class="grid md:grid-cols-2 gap-5">
-    <div>
-      <label class="block text-sm text-slate-400">Адрес точки A</label>
-      <input required name="addrA"
-             class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"
-             placeholder="Город, улица, дом" />
-      <p id="err-addrA" class="mt-1 text-xs text-red-400 hidden">Укажите адрес точки A.</p>
-    </div>
-    <div>
-      <label class="block text-sm text-slate-400">Адрес точки B</label>
-      <input required name="addrB"
-             class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"
-             placeholder="Город, улица, дом" />
-      <p id="err-addrB" class="mt-1 text-xs text-red-400 hidden">Укажите адрес точки B.</p>
-    </div>
+    <div class="mx-auto max-w-3xl px-4 py-16">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Проверка технической возможности</h2>
+        <p class="mt-3 text-slate-300">Заполните поля — заявка уйдёт в Telegram. Мы вернёмся с расчётом и сроками подключения.</p>
+      </div>
+
+      <form id="leadForm" class="mt-8 loft-card rounded-2xl p-6 grid gap-5">
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm text-slate-400">Адрес точки A</label>
+            <input required name="addrA" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" placeholder="Город, улица, дом" />
+          </div>
+          <div>
+            <label class="block text-sm text-slate-400">Адрес точки B</label>
+            <input required name="addrB" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" placeholder="Город, улица, дом" />
+          </div>
+        </div>
+    <div class="grid md:grid-cols-3 gap-5 items-end">
+  <div class="flex flex-col h-full justify-end">
+    <label class="block text-sm text-slate-400">Требуемая скорость</label>
+    <select name="speed" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
+      <option>10 Мбит/с</option>
+      <option>50 Мбит/с</option>
+      <option>100 Мбит/с</option>
+      <option>500 Мбит/с</option>
+      <option>Иная (указать в комментарии)</option>
+    </select>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-5 items-end">
-    <div class="flex flex-col h-full justify-end">
-      <label class="block text-sm text-slate-400">Требуемая скорость</label>
-      <select name="speed"
-              class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
-        <option>10 Мбит/с</option>
-        <option>50 Мбит/с</option>
-        <option>100 Мбит/с</option>
-        <option>500 Мбит/с</option>
-        <option>Иная (указать в комментарии)</option>
-      </select>
-      <p id="err-speed" class="mt-1 text-xs text-red-400 hidden">Выберите скорость.</p>
-    </div>
-
-    <div class="flex flex-col h-full justify-end">
-      <label class="block text-sm text-slate-400">Резерв по независимому маршруту (SLA)</label>
-      <select name="dual"
-              class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
-        <option>Нужно</option>
-        <option selected>Не требуется</option>
-      </select>
-    </div>
-
-    <div class="flex flex-col h-full justify-end">
-      <label class="block text-sm text-slate-400">Телефон / Email</label>
-      <input required name="contact" autocomplete="on"
-             class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"
-             placeholder="+7 999 123-45-67 или mail@domain" />
-      <p id="err-contact" class="mt-1 text-xs text-red-400 hidden">Укажите корректный телефон (+7 ...) или email.</p>
-    </div>
+  <div class="flex flex-col h-full justify-end">
+    <label class="block text-sm text-slate-400">Резерв по независимому маршруту (SLA)</label>
+    <select name="dual" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent">
+      <option>Нужно</option>
+      <option selected>Не требуется</option>
+    </select>
   </div>
 
-  <div>
-    <label class="block text-sm text-slate-400">Комментарий</label>
-    <textarea name="note" rows="3"
-              class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"
-              placeholder="Точки в ЦОД, желаемые сроки, требования по L2, VLAN/QinQ, шифрование и т.д."></textarea>
+  <div class="flex flex-col h-full justify-end">
+    <label class="block text-sm text-slate-400">Телефон / Email</label>
+    <input required name="contact" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" placeholder="+7... или mail@domain">
   </div>
+</div>
 
-  <div id="formStatus" class="hidden rounded-xl border border-slate-600 p-3 text-sm"></div>
+        <div>
+          <label class="block text-sm text-slate-400">Комментарий</label>
+          <textarea name="note" rows="3" class="mt-2 w-full rounded-xl border border-slate-600 bg-slate-900/50 px-4 py-3 outline-none focus:ring-2 focus:ring-accent" placeholder="Точки в ЦОД, желаемые сроки, требования по L2, VLAN/QinQ, шифрование и т.д."></textarea>
+        </div>
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+          <button type="submit" class="rounded-xl bg-accent px-6 py-3 text-slate-900 font-semibold">Отправить в Telegram</button>
+          <p class="text-xs text-slate-400">Нажимая кнопку, вы подтверждаете согласие с обработкой данных. Ответим в рабочее время или по аварийной заявке 24/7.</p>
+        </div>
+      </form>
 
-  <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-    <button id="submitBtn" type="submit"
-            class="rounded-xl bg-accent px-6 py-3 text-slate-900 font-semibold">
-      Отправить
-    </button>
-    <p class="text-xs text-slate-400">
-      Нажимая кнопку, вы подтверждаете согласие с обработкой данных.
-    </p>
-  </div>
-</form>
-
+      <p class="mt-6 text-xs text-slate-500">*Данный сайт — первая фаза проекта. На втором этапе L2VPN.ru станет маркетплейсом предложений каналов («Avito для L2VPN») с сравнением маршрутов, SLA и цен.</p>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -339,113 +324,50 @@
     </div>
   </footer>
 
-<script>
-  // Footer year
-  document.getElementById('y').textContent = new Date().getFullYear();
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Webhook POST → n8n
-  const WEBHOOK_URL = 'https://n8n.flexdc.ru/webhook/l2vpn';
+    // Simple Telegram redirect with prefilled text
+    const TG_USERNAME = 'AlexSGLX'; // TODO: замените на реальный username вашего Telegram
 
-  function isValidEmail(v) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((v || '').trim());
-  }
-
-  function isValidPhoneRU(v) {
-    const s = (v || '').replace(/[\s()-]/g, '');
-    return /^\+7\d{10}$/.test(s) || /^8\d{10}$/.test(s);
-  }
-
-  function showErr(id, show) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.toggle('hidden', !show);
-  }
-
-  function setStatus(msg, ok) {
-    const box = document.getElementById('formStatus');
-    if (!box) return;
-    box.classList.remove('hidden');
-    box.textContent = msg;
-    box.classList.toggle('text-green-300', !!ok);
-    box.classList.toggle('text-red-300', !ok);
-    box.classList.toggle('border-green-700', !!ok);
-    box.classList.toggle('border-red-700', !ok);
-  }
-
-  document.getElementById('leadForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const fd = new FormData(form);
-
-    const addrA   = (fd.get('addrA')   || '').trim();
-    const addrB   = (fd.get('addrB')   || '').trim();
-    const speed   = (fd.get('speed')   || '').trim();
-    const dual    = (fd.get('dual')    || '').trim();
-    const contact = (fd.get('contact') || '').trim();
-    const note    = (fd.get('note')    || '').trim();
-
-    // Валидация
-    showErr('err-addrA', !addrA);
-    showErr('err-addrB', !addrB);
-    showErr('err-speed', !speed);
-    const contactOk = isValidEmail(contact) || isValidPhoneRU(contact);
-    showErr('err-contact', !contactOk);
-
-    if (!(addrA && addrB && speed && contactOk)) {
-      setStatus('Проверьте выделенные поля.', false);
-      return;
+    function formToMessage(fd) {
+      const lines = [
+        'Заявка на L2VPN (L2VPN.ru):',
+        `Адрес A: ${fd.get('addrA')}`,
+        `Адрес B: ${fd.get('addrB')}`,
+        `Скорость: ${fd.get('speed')}`,
+        `Резерв (SLA): ${fd.get('dual')}`,
+        `Контакт: ${fd.get('contact')}`,
+        `Комментарий: ${fd.get('note') || '-'}`,
+      ];
+      return lines.join('\n');
     }
 
-    // Пакет в n8n
-    const payload = {
-      source: 'l2vpn.ru',
-      addrA, addrB, speed, dual, contact, note,
-      meta: {
-        url: location.href,
-        ua: navigator.userAgent,
-        tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        ts: new Date().toISOString(),
-        utm: Object.fromEntries(new URLSearchParams(location.search)),
-      },
-    };
+    document.getElementById('leadForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const msg = encodeURIComponent(formToMessage(fd));
+      // Вариант: открываем tg с текстом для бота/аккаунта.
+      // Если у вас есть бот, замените ссылку на tg.me/your_bot?startapp=... или deep-link к боту с payload.
+      const url = `https://t.me/${TG_USERNAME}?text=${msg}`;
+      window.open(url, '_blank');
+    });
+  </script>
 
-    // UI lock
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.classList.add('opacity-60', 'cursor-not-allowed');
-    setStatus('Отправляем заявку…', true);
-
-    try {
-      const res = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      setStatus('Заявка принята. Мы свяжемся с вами в ближайшее время.', true);
-      form.reset();
-    } catch (err) {
-      setStatus('Не удалось отправить заявку. Попробуйте позже или свяжитесь с нами другим способом.', false);
-    } finally {
-      btn.disabled = false;
-      btn.classList.remove('opacity-60', 'cursor-not-allowed');
-    }
-  });
-</script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+  <!-- (Опционально) Yandex.Metrika: раскомментируйте при необходимости -->
+  <!--
+  <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105184166', 'ym');
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
 
-    ym(105184166, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/105184166" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-  
+    ym(YOUR_COUNTER_ID, 'init', { webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/YOUR_COUNTER_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  -->
 </body>
 </html>
