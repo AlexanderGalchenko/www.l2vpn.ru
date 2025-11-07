@@ -1,0 +1,29 @@
+{
+  "name": "l2vpn.ru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderGalchenko/www.l2vpn.ru.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderGalchenko/www.l2vpn.ru/issues"
+  },
+  "homepage": "https://github.com/AlexanderGalchenko/www.l2vpn.ru#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.3.1"
+  }
+}
+"scripts": {
+  "build": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css --minify",
+  "watch": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch"
+}
